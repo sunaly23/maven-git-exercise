@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn clean install' // Example build command for a Maven project
+                bat 'mvn clean install' // Example build command for a Maven project on Windows
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'mvn test' // Example test command for a Maven project
+                bat 'mvn test' // Example test command for a Maven project on Windows
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            sh 'mvn clean' // Clean up after the build
+            bat 'mvn clean' // Clean up after the build on Windows
         }
         success {
             echo 'Build was successful!'
